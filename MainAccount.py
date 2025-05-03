@@ -9,6 +9,16 @@ db = mysql.connector.connect(
 
 cursor = db.cursor(dictionary=True)
 
+def handle_login():
+    username = username_entry.get()
+    password = password_entry.get()
+
+    if check_credentials(username, password):
+        print("Login successful!";
+    else:
+        print("Login failed. Invalid credentials.")
+
+
 def check_balance(user_id):
     cursor.execute("SELECT balance FROM accounts WHERE user_id = %s", (user_id))
     result = cursor.fetchone()
