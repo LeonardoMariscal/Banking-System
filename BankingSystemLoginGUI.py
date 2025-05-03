@@ -27,4 +27,16 @@ password_entry.grid(row=2, column=1, padx=20, pady=10, sticky="w")
 login_button = tk.Button(root, text="Enter", font=('Arial', 18), width=10)
 login_button.grid(row=3, column=0, columnspan=2, pady=40)
 
+from auth import check_credentials
+
+def handle_login():
+    username = username_entry.get()
+    password = password_entry.get()
+
+    if check_credentials(username, password):
+        print("Login successful!";
+    else:
+        print("Login failed. Invalid credentials.")
+
+
 root.mainloop()
