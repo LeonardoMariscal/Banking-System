@@ -1,0 +1,1 @@
+INSERT INTO accounts (user_id, balance) VALUES (2, 40000);
